@@ -2,9 +2,10 @@ FROM alpine:3.14
 
 # Install packages and remove default server definition
 RUN apk --no-cache add \
+  bash \
   curl \
   nginx \
-  mc \
+  mc \  
   php8 \
   php8-ctype \
   php8-curl \
@@ -22,11 +23,15 @@ RUN apk --no-cache add \
   php8-xml \
   php8-xmlreader \
   php8-zlib \
-  php8-intl
-
+  php8-intl \
+  php8-iconv \
+  php8-tokenizer
 
 # Create symlink so programs depending on `php` still function
 RUN ln -s /usr/bin/php8 /usr/bin/php
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=compose
 
 # Init entrypoint script 
 COPY entrypoint.sh /entrypoint.sh
