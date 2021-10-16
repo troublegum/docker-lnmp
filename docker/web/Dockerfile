@@ -31,7 +31,7 @@ RUN apk --no-cache add \
 RUN ln -s /usr/bin/php8 /usr/bin/php
 
 # Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=compose
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Init entrypoint script 
 COPY entrypoint.sh /entrypoint.sh
