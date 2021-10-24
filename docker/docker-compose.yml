@@ -3,7 +3,7 @@ services:
     db:
         image: mariadb:10.4
         environment:
-            - MYSQL_DATABASE=db
+            - MYSQL_DATABASE=db_name
             - MYSQL_USER=db_user
             - MYSQL_PASSWORD=12345
             - MYSQL_ROOT_PASSWORD=root
@@ -17,3 +17,4 @@ services:
             - "80:80"
         volumes:
             - ../app/:/var/www
+

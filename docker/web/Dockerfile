@@ -15,7 +15,6 @@ RUN apk --no-cache add \
   php8-intl \
   php8-json \
   php8-mbstring \
-  php8-mysqli \
   php8-opcache \
   php8-openssl \
   php8-phar \
@@ -25,7 +24,8 @@ RUN apk --no-cache add \
   php8-zlib \
   php8-intl \
   php8-iconv \
-  php8-tokenizer
+  php8-tokenizer \
+  php8-pdo_mysql
 
 # Create symlink so programs depending on `php` still function
 RUN ln -s /usr/bin/php8 /usr/bin/php
