@@ -14,7 +14,7 @@ See the PHP info on http://localhost
 	/data - mysql data folder
 
 ## Mysql credentials
-**Mysql database name:** db
+**Mysql database name:** db_name
 
 **Mysql username:** db_user
 
